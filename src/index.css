@@ -3,3 +3,9 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.ui.header.app-header {
+  margin-top: 20px;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 48px;
+}

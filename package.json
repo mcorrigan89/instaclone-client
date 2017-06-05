@@ -1,13 +1,24 @@
 {
-  "name": "instaclone-client-test",
+  "name": "instaclone-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/moment": "^2.13.0",
+    "axios": "^0.16.1",
+    "history": "^4.6.1",
+    "moment": "^2.18.1",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-file-input": "^0.2.5",
+    "react-file-uploader": "^0.3.3",
+    "react-router-dom": "^4.1.1",
+    "react-s3-uploader": "^4.1.1",
+    "rxjs": "^5.3.0",
+    "semantic-ui-css": "^2.2.10",
+    "semantic-ui-react": "^0.68.2"
   },
   "devDependencies": {
-    "react-scripts": "1.0.7"
+    "react-scripts": "0.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
