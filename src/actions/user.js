@@ -14,7 +14,7 @@ export const UNSUBSCRIBE = 'UNSUBSCRIBE';
 import { CLEAR_BOARD } from './board';
 
 // const api = 'https://api.board.sourgrapes.io';
-const api = 'instaclone-env.us-west-2.elasticbeanstalk.com';
+const api = 'http://instaclone-env.us-west-2.elasticbeanstalk.com';
 
 
 const login = (username, password) => {
