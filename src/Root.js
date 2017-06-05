@@ -17,7 +17,7 @@ import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory'
 const history = createBrowserHistory();
 
-import { Header, Container } from 'semantic-ui-react';
+import { Header, Container, Icon } from 'semantic-ui-react';
 
 class Root extends Component {
 
@@ -40,6 +40,7 @@ class Root extends Component {
                     <Header
                         className="app-header title"
                         textAlign={'center'}>
+                        <Icon name='instagram' size='massive' />
                         Instaclone
                     </Header>
                     <Container>
