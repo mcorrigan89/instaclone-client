@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { dispatch$ } from './dispatch';
+import { dispatch$, api } from './dispatch';
 import { appState } from '../stores/index';
 
 export const CHECK_FOR_TOKEN = 'CHECK_FOR_TOKEN';
@@ -14,7 +14,7 @@ export const UNSUBSCRIBE = 'UNSUBSCRIBE';
 import { CLEAR_BOARD } from './board';
 
 // const api = 'https://api.board.sourgrapes.io';
-const api = 'http://instaclone-env.us-west-2.elasticbeanstalk.com';
+// const api = 'http://instaclone-env.us-west-2.elasticbeanstalk.com';
 
 
 const login = (username, password) => {
