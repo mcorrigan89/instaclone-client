@@ -1,18 +1,10 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom';
-import FileInput from 'react-file-input';
-import axios from 'axios';
 
-import {Container, Grid, Form, Dropdown,  Button, Header, Segment} from 'semantic-ui-react'
+import {Container, Grid, Form,  Button, Header, Segment} from 'semantic-ui-react'
 
 import {dispatch$} from '../actions/dispatch';
 import {CREATE_ENTRY} from '../actions/board';
-
-const options = [
-    { key: 'choose', text: 'Is this the Best or the Worst?', value: 'CHOOSE' },
-    { key: 'best', text: 'Best', value: 'BEST' },
-    { key: 'worst', text: 'Worst', value: 'WORST' },
-];
 
 class CreateEntry extends Component {
 
@@ -65,13 +57,13 @@ class CreateEntry extends Component {
                                         }}/>
                                     </Form.Field>
                                     <Form.Field>
-                                        <FileInput name="image"
-                                                   accept=".png,.gif,.jpg,.jpeg"
+                                        <input name="image"
+                                                   type="file"
                                                    placeholder="My Image"
-                                                   className="file"
+                                                   className="ui button"
                                                    onChange={this.handleChange} />
                                     </Form.Field>
-                                    <Button type="submit" disabled={(!this.state.description)}>Create</Button>
+                                    <Button type="submit" disabled={(!this.state.description) || (!this.state.uploaded)}>Create</Button>
                                 </Form>
                             </Segment>
                         </Segment.Group>
