@@ -11,7 +11,7 @@ export const VOTE = 'VOTE';
 export const UNVOTE = 'UNVOTE';
 
 // const api = 'https://api.board.sourgrapes.io';
-export const api = 'http://localhost:8080';
+export const api = 'instaclone-env.us-west-2.elasticbeanstalk.com';
 
 let getEntires = () => {
     return axios.get(`${api}/api/board/entry`)
