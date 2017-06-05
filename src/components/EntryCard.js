@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Card, Label, Image, Statistic, Button } from 'semantic-ui-react';
 import moment from 'moment';
 
-import { api } from '../actions/board'
+import { api } from '../actions/dispatch'
 
 export const EntryCard = ({entry, vote}) => (
     <Card fluid centered={true}>
