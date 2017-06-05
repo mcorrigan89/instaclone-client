@@ -1,7 +1,8 @@
-import { users$, currentUser$, board$} from './stores';
+import { users$, currentUser$, board$, error$ } from './stores';
 
 export const appState = {
     users$,
     board$,
-    currentUser$
+    currentUser$,
+    error$
 };

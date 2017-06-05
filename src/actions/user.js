@@ -12,6 +12,7 @@ export const SUBSCRIBE = 'SUBSCRIBE';
 export const UNSUBSCRIBE = 'UNSUBSCRIBE';
 
 import { CLEAR_BOARD } from './board';
+import { ERROR } from './error';
 
 // const api = 'https://api.board.sourgrapes.io';
 // const api = 'http://instaclone-env.us-west-2.elasticbeanstalk.com';
@@ -70,17 +71,29 @@ dispatch$.subscribe(action => {
         case REGISTER:
             register(action.payload.username, action.payload.password)
                 .then(res => {
-                    localStorage.setItem('token', res.data.token);
-                    appState.currentUser$.next(Object.assign({}, appState.currentUser$.value, {token: res.data.token}));
-                    dispatch$.next({type: GET_ME});
+                    if (res.data.error) {
+                        dispatch$.next({type: ERROR, payload: {error: res.data.error}});
+                    }
+                    else {
+                        localStorage.setItem('token', res.data.token);
+                        appState.currentUser$.next(Object.assign({}, appState.currentUser$.value, {token: res.data.token}));
+                        dispatch$.next({type: GET_ME});
+                    }
                 });
             break;
         case USER_LOGIN:
             login(action.payload.username, action.payload.password)
                 .then(res => {
-                    localStorage.setItem('token', res.data.token);
-                    appState.currentUser$.next(Object.assign({}, appState.currentUser$.value, {token: res.data.token}));
-                    dispatch$.next({type: GET_ME});
+                    if (res.data.error) {
+                        console.log(res.data.error)
+                        dispatch$.next({type: ERROR, payload: {error: res.data.error}});
+                    }
+                    else {
+                        console.log('res', res)
+                        localStorage.setItem('token', res.data.token);
+                        appState.currentUser$.next(Object.assign({}, appState.currentUser$.value, {token: res.data.token}));
+                        dispatch$.next({type: GET_ME});
+                    }
                 });
             break;
         case USER_LOGOUT:
